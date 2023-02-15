@@ -8,9 +8,132 @@
       "isOpen": false,
       "isSystem": false,
       "createdAt": 1676430287968,
-      "updatedAt": 1676430287968
+      "updatedAt": 1676430287968,
+      "index": 0
+    },
+    {
+      "name": "Tailwind",
+      "parentId": "461iqrlV",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "vue",
+      "id": "WermJymx",
+      "createdAt": 1676430638778,
+      "updatedAt": 1676430672292,
+      "index": 0
+    },
+    {
+      "name": "Vue",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "vue",
+      "id": "461iqrlV",
+      "createdAt": 1676430629217,
+      "updatedAt": 1676430663579,
+      "index": 1
+    },
+    {
+      "name": "Typescript",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "typescript",
+      "id": "JIED5KRG",
+      "createdAt": 1676430844027,
+      "updatedAt": 1676430863478
     }
   ],
-  "snippets": [],
-  "tags": []
+  "snippets": [
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WermJymx",
+      "tagsIds": [
+        "bUAP7v6i",
+        "lbGMMAsW",
+        "MCtIE6ko",
+        "yYwAOz7J"
+      ],
+      "description": null,
+      "name": "ContentEditable",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "<template>\n    <div class=\"group inline-flex gap-2\">\n        <span :contenteditable=\"editing\" ref=\"contentEl\">{{ modelValue }}</span>\n\n        <template v-if=\"!disabled\">\n            <template v-if=\"editing\">\n                <button class=\"text-green-600\" @click=\"save\">\n                    <CheckIcon class=\"h-4 w-4\" />\n                </button>\n                <button class=\"text-red-600\" @click=\"cancel\">\n                    <XMarkIcon class=\"h-4 w-4\" />\n                </button>\n            </template>\n\n            <button class=\"opacity-0 text-blue-600 group-hover:opacity-100 group-focus-within:opacity-100\" @click=\"edit\" v-if=\"!editing\">\n                <PencilSquareIcon class=\"h-4 w-4\" />\n            </button>\n        </template>\n    </div>\n</template>\n\n<script setup lang=\"ts\">\nimport { nextTick, ref } from \"vue\";\nimport { CheckIcon, PencilSquareIcon, XMarkIcon } from \"@heroicons/vue/20/solid\";\n\ninterface Props {\n    disabled?: boolean\n    modelValue: string\n}\n\nconst props = withDefaults(defineProps<Props>(), { disabled: false })\nconst emit = defineEmits(['update:modelValue'])\n\nconst contentEl = ref<null | HTMLElement>(null)\nconst editing = ref(false)\n\n// Functions\nconst edit = async () => {\n    editing.value = true\n    await nextTick()\n    contentEl.value?.focus()\n}\nconst save = () => {\n    emit('update:modelValue', contentEl.value?.innerHTML)\n    editing.value = false\n}\nconst cancel = () => {\n    editing.value = false\n    if (contentEl.value?.innerText) contentEl.value.innerText = props.modelValue\n}\n</script>"
+        }
+      ],
+      "id": "LjrXnSxC",
+      "createdAt": 1676430678868,
+      "updatedAt": 1676430716196
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JIED5KRG",
+      "tagsIds": [
+        "xyE_aYiN",
+        "yYwAOz7J",
+        "vApa4s3O",
+        "BgpSSGN-"
+      ],
+      "description": null,
+      "name": "Type from array",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "typescript",
+          "value": "const colors = [\n\t\"slate\",\n  \"gray\",\n  \"zinc\",\n  \"neutral\",\n  \"stone\",\n  \"red\",\n  \"orange\",\n  \"amber\",\n  \"yellow\",\n  \"lime\",\n  \"green\",\n  \"emerald\",\n  \"teal\",\n  \"cyan\",\n  \"sky\",\n  \"blue\",\n  \"indigo\",\n  \"violet\",\n  \"purple\",\n  \"fuchsia\",\n  \"pink\",\n  \"rose\",\n] as const\n\ntype Color = typeof colors[number]"
+        }
+      ],
+      "id": "Q_AeNuml",
+      "createdAt": 1676430866876,
+      "updatedAt": 1676431109450
+    }
+  ],
+  "tags": [
+    {
+      "name": "vue",
+      "id": "bUAP7v6i",
+      "createdAt": 1676430693009,
+      "updatedAt": 1676430693009
+    },
+    {
+      "name": "tailwind",
+      "id": "lbGMMAsW",
+      "createdAt": 1676430696827,
+      "updatedAt": 1676430696827
+    },
+    {
+      "name": "heroicons",
+      "id": "MCtIE6ko",
+      "createdAt": 1676430701456,
+      "updatedAt": 1676430701456
+    },
+    {
+      "name": "typescript",
+      "id": "yYwAOz7J",
+      "createdAt": 1676430705538,
+      "updatedAt": 1676430705538
+    },
+    {
+      "name": "array",
+      "id": "xyE_aYiN",
+      "createdAt": 1676430882689,
+      "updatedAt": 1676430882689
+    },
+    {
+      "name": "typing",
+      "id": "vApa4s3O",
+      "createdAt": 1676430898573,
+      "updatedAt": 1676430898573
+    },
+    {
+      "name": "type",
+      "id": "BgpSSGN-",
+      "createdAt": 1676430900895,
+      "updatedAt": 1676430900895
+    }
+  ]
 }
