@@ -1,17 +1,6 @@
 {
   "folders": [
     {
-      "id": "ps9mP7Jz",
-      "name": "Default",
-      "defaultLanguage": "typescript",
-      "parentId": null,
-      "isOpen": false,
-      "isSystem": false,
-      "createdAt": 1676430287968,
-      "updatedAt": 1676430287968,
-      "index": 0
-    },
-    {
       "name": "Tailwind",
       "parentId": "461iqrlV",
       "isOpen": false,
