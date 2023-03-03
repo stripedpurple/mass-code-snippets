@@ -179,6 +179,24 @@
       "id": "V8Uoej4z",
       "createdAt": 1677803643612,
       "updatedAt": 1677804514094
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-1T_YQVi",
+      "tagsIds": [],
+      "description": null,
+      "name": "useThrottleFn",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "jsx",
+          "value": "import { useCallback } from \"react\";\n\nconst throttle = (fn, delay = 300) => {\n  let lastCalled = 0;\n  return (...args) => {\n    let now = new Date().getTime();\n    if (now - lastCalled < delay)\n      return;\n    lastCalled = now;\n    return fn(...args);\n  };\n};\n\nexport const useThrottleFn = (func, timeout = 300) =>\n  useCallback(throttle(func, timeout), []);\n"
+        }
+      ],
+      "id": "ug23MPNT",
+      "createdAt": 1677804577922,
+      "updatedAt": 1677804595233
     }
   ],
   "tags": [
