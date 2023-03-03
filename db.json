@@ -152,6 +152,33 @@
       "id": "-LRrTBsS",
       "createdAt": 1677803312903,
       "updatedAt": 1677803347348
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JIED5KRG",
+      "tagsIds": [
+        "xPVMgbiT",
+        "WjaPcJoL",
+        "NesvNuLl"
+      ],
+      "description": null,
+      "name": "Throttle Function",
+      "content": [
+        {
+          "label": "Arrow Function",
+          "language": "typescript",
+          "value": "const throttle = (fn, delay) => {\n  let lastCalled = 0;\n  return (...args) => {\n    let now = new Date().getTime();\n    if(now - lastCalled < delay)\n      return;\n    lastCalled = now;\n    return fn(...args);\n  }\n}"
+        },
+        {
+          "label": "Function",
+          "language": "typescript",
+          "value": "function throttle(fn, delay){\n  let lastCalled = 0;\n  return (...args) => {\n    let now = new Date().getTime();\n    if(now - lastCalled < delay) \n      return;\n    lastCalled = now;\n    return fn(...args);\n  }\n}"
+        }
+      ],
+      "id": "V8Uoej4z",
+      "createdAt": 1677803643612,
+      "updatedAt": 1677804514094
     }
   ],
   "tags": [
@@ -226,6 +253,12 @@
       "id": "7e-qG7bw",
       "createdAt": 1677803341807,
       "updatedAt": 1677803341807
+    },
+    {
+      "name": "throttle",
+      "id": "xPVMgbiT",
+      "createdAt": 1677804502571,
+      "updatedAt": 1677804502571
     }
   ]
 }
