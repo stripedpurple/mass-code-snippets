@@ -197,6 +197,26 @@
       "id": "ug23MPNT",
       "createdAt": 1677804577922,
       "updatedAt": 1677804595233
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JIED5KRG",
+      "tagsIds": [
+        "NePqYhxn"
+      ],
+      "description": null,
+      "name": "OS Detection",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "typescript",
+          "value": "const os = navigator.userAgent\nexport function getOS() {\n    if (os.search('Windows') !== -1) {\n        return 'Windows'\n    } else if (os.search('Mac') !== -1) {\n        return 'MacOS'\n    } else if (!(os.search('Linux') !== -1) && os.search('X11') !== -1) {\n        return 'UNIX'\n    } else if (os.search('Linux') !== -1 && os.search('X11') !== -1) {\n        return 'Linux'\n    }\n}\n\nexport function isOS(whatToDetect: 'Windows' | 'MacOS' | 'UNIX' | 'Linux') {\n    return getOS() === whatToDetect\n}\n\nexport const isMacOS = isOS('MacOS')\nexport const isWindows = isOS('Windows')\nexport const isUNIX = isOS('UNIX')\nexport const isLinux = isOS('Linux')\n\nexport default {\n    is: isOS,\n    get: getOS,\n    isMacOS,\n    isWindows,\n    isUNIX,\n    isLinux,\n}\n"
+        }
+      ],
+      "id": "q6MFmSq9",
+      "createdAt": 1684186193085,
+      "updatedAt": 1684186393132
     }
   ],
   "tags": [
@@ -277,6 +297,12 @@
       "id": "xPVMgbiT",
       "createdAt": 1677804502571,
       "updatedAt": 1677804502571
+    },
+    {
+      "name": "os",
+      "id": "NePqYhxn",
+      "createdAt": 1684186233177,
+      "updatedAt": 1684186233177
     }
   ]
 }
