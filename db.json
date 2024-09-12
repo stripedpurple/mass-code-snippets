@@ -1,6 +1,28 @@
 {
   "folders": [
     {
+      "name": "Typescript",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "typescript",
+      "id": "JIED5KRG",
+      "createdAt": 1676430844027,
+      "updatedAt": 1676430863478,
+      "index": 0
+    },
+    {
+      "name": "JavaScript",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "qVC9BJhW",
+      "createdAt": 1695051310917,
+      "updatedAt": 1695051345574,
+      "index": 1
+    },
+    {
       "name": "Tailwind",
       "parentId": "461iqrlV",
       "isOpen": false,
@@ -20,18 +42,7 @@
       "id": "461iqrlV",
       "createdAt": 1676430629217,
       "updatedAt": 1676430663579,
-      "index": 0
-    },
-    {
-      "name": "Typescript",
-      "parentId": null,
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "typescript",
-      "id": "JIED5KRG",
-      "createdAt": 1676430844027,
-      "updatedAt": 1676430863478,
-      "index": 1
+      "index": 2
     },
     {
       "name": "Hooks",
@@ -47,13 +58,57 @@
     {
       "name": "React",
       "parentId": null,
-      "isOpen": true,
+      "isOpen": false,
       "isSystem": false,
       "defaultLanguage": "jsx",
       "id": "EnQscF0a",
       "createdAt": 1677803236405,
       "updatedAt": 1677803294396,
+      "index": 3
+    },
+    {
+      "name": "POSIX",
+      "parentId": "ofP5IVtT",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "sh",
+      "id": "yFIvuSX5",
+      "createdAt": 1706467023759,
+      "updatedAt": 1706467225667,
+      "index": 0
+    },
+    {
+      "name": "bash",
+      "parentId": "ofP5IVtT",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "pCcKvRpc",
+      "createdAt": 1706467043957,
+      "updatedAt": 1706467058481,
+      "index": 1
+    },
+    {
+      "name": "zsh",
+      "parentId": "ofP5IVtT",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "Z2Dv8XLd",
+      "createdAt": 1706467062683,
+      "updatedAt": 1706467069339,
       "index": 2
+    },
+    {
+      "name": "Shell Scripting",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "ofP5IVtT",
+      "createdAt": 1706466990535,
+      "updatedAt": 1706467002930,
+      "index": 4
     }
   ],
   "snippets": [
@@ -217,6 +272,85 @@
       "id": "q6MFmSq9",
       "createdAt": 1684186193085,
       "updatedAt": 1684186393132
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "qVC9BJhW",
+      "tagsIds": [
+        "zYHQJB5Z"
+      ],
+      "description": null,
+      "name": "Stop Clipboard Jacking",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "document.addEventListener(\n\t\"paste\",\n\t(e) => e.stopImmediatePropagation(),\n\ttrue\n)"
+        }
+      ],
+      "id": "Yjfn6G35",
+      "createdAt": 1695051328999,
+      "updatedAt": 1695051477688
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WermJymx",
+      "tagsIds": [
+        "lbGMMAsW",
+        "bUAP7v6i",
+        "V3F45oPO",
+        "Za3bsUXr"
+      ],
+      "description": null,
+      "name": "IP Address Input",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "<template>\n    <div class=\"flex items-end gap-1\" ref=\"parentElm\">\n        <input placeholder=\"0\" type=\"tel\" maxlength=\"3\" minlength=\"1\" @keydown=\"next\" />\n        <!--        <span class=\"font-medium\">.</span>-->\n        <input placeholder=\"0\" type=\"tel\" maxlength=\"3\" minlength=\"1\" @keydown=\"next\" />\n        <!--        <span class=\"font-medium\">.</span>-->\n        <input placeholder=\"0\" type=\"tel\" maxlength=\"3\" minlength=\"1\" @keydown=\"next\" />\n        <!--        <span class=\"font-medium\">.</span>-->\n        <input placeholder=\"0\" type=\"tel\" maxlength=\"3\" minlength=\"1\" />\n    </div>\n</template>\n\n<script setup lang=\"ts\">\nimport { computed, ref, toRefs } from 'vue'\nimport { Mask } from 'maska'\n\ninterface Props {\n    modelValue?: string\n}\n\nconst props = withDefaults(defineProps<Props>(), { modelValue: '' })\nconst { modelValue } = toRefs(props)\n\nconst emit = defineEmits(['update:modelValue'])\n\nconst parentElm = ref(null)\nconst updateValue = (e: any) => {\n    emit('update:modelValue')\n}\n// @TODO Added pseudo after for periods\n// @TODO Extract number logic to separate function\n// @TODO add new number logic to last input and next function\nconst next = (e) => {\n    let evt = e ? e : window.event\n    let charCode = evt.which ? evt.which : evt.keyCode\n    if (charCode !== 190 && charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 46) {\n        evt.preventDefault()\n    } else if (charCode === 190 && e.target.value.length === 0) {\n      e.preventDefault()\n    } else if (charCode === 190 && e.target.value.length !== 0) {\n        e.preventDefault()\n        e.target.nextElementSibling.focus()\n    } else {\n        return true\n    }\n\n    // if (!(e.keyCode < 57 && e.keyCode > 48) && e.keyCode !== 190) e.preventDefault()\n    //\n    // if (e.keyCode === 190) {\n    //     e.target.nextElementSibling.focus()\n    //     return false\n    // }\n    //\n    // if (e.target.value.length === 3) e.target.nextElementSibling.focus()\n}\n</script>\n\n<!-- This is required to get v-model and attribute fall through working-->\n<script lang=\"ts\">\nexport default {\n    inheritAttrs: false,\n}\n</script>\n\n<style scoped lang=\"sass\">\ninput\n  @apply block w-full rounded-md border border-slate-300 bg-gray-200/25 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-50 disabled:bg-gray-200/50 disabled:text-slate-500 disabled:shadow-none dark:border-slate-700 dark:bg-slate-800/50 sm:text-sm w-14 text-center\n  &.lg\n    @apply sm:px-4 sm:py-3 sm:text-lg\n</style>\n"
+        }
+      ],
+      "id": "DQHBDHqk",
+      "createdAt": 1701190191375,
+      "updatedAt": 1701190228751
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "yFIvuSX5",
+      "tagsIds": [],
+      "description": null,
+      "name": "Singleton",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "sh",
+          "value": "#!/usr/bin/env sh\nsingleton () {\n    LOCK=/tmp/$(basename $0).lock\n    remove_lock()\n    {\n        rm -rf \"$LOCK\"\n    }\n    another_instance()\n    {\n        echo \"There is another instance running, exiting\"\n        exit 1\n    }\n    mkdir \"$LOCK\" || another_instance\n    trap remove_lock EXIT\n    echo $$ > $LOCK/pid\n}\n"
+        }
+      ],
+      "id": "OpN66glT",
+      "createdAt": 1706467084209,
+      "updatedAt": 1706467245315
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JIED5KRG",
+      "tagsIds": [],
+      "description": null,
+      "name": "xrange",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "typescript",
+          "value": "function* xrange(a: number, b?: number) {\n\tb ??= a;\n\tif (b === a) a = 0 ;\n\twhile (a < b)  yield a++;\n}"
+        }
+      ],
+      "id": "txut2k1R",
+      "createdAt": 1726149295497,
+      "updatedAt": 1726149332189
     }
   ],
   "tags": [
@@ -303,6 +437,24 @@
       "id": "NePqYhxn",
       "createdAt": 1684186233177,
       "updatedAt": 1684186233177
+    },
+    {
+      "name": "clipboard",
+      "id": "zYHQJB5Z",
+      "createdAt": 1695051442844,
+      "updatedAt": 1695051442844
+    },
+    {
+      "name": "ipAddr",
+      "id": "V3F45oPO",
+      "createdAt": 1701190209238,
+      "updatedAt": 1701190209238
+    },
+    {
+      "name": "component",
+      "id": "Za3bsUXr",
+      "createdAt": 1701190215603,
+      "updatedAt": 1701190215603
     }
   ]
 }
