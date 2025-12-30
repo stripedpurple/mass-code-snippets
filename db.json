@@ -1,26 +1,15 @@
 {
   "folders": [
     {
-      "name": "Typescript",
+      "name": "JS / TS",
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
       "defaultLanguage": "typescript",
       "id": "JIED5KRG",
       "createdAt": 1676430844027,
-      "updatedAt": 1676430863478,
+      "updatedAt": 1767104221332,
       "index": 0
-    },
-    {
-      "name": "JavaScript",
-      "parentId": null,
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "javascript",
-      "id": "qVC9BJhW",
-      "createdAt": 1695051310917,
-      "updatedAt": 1695051345574,
-      "index": 1
     },
     {
       "name": "Tailwind",
@@ -276,7 +265,7 @@
     {
       "isDeleted": false,
       "isFavorites": false,
-      "folderId": "qVC9BJhW",
+      "folderId": "JIED5KRG",
       "tagsIds": [
         "zYHQJB5Z"
       ],
@@ -291,7 +280,7 @@
       ],
       "id": "Yjfn6G35",
       "createdAt": 1695051328999,
-      "updatedAt": 1695051477688
+      "updatedAt": 1767104184407
     },
     {
       "isDeleted": false,
@@ -338,7 +327,9 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "JIED5KRG",
-      "tagsIds": [],
+      "tagsIds": [
+        "fVJLJCAh"
+      ],
       "description": null,
       "name": "xrange",
       "content": [
@@ -350,7 +341,47 @@
       ],
       "id": "txut2k1R",
       "createdAt": 1726149295497,
-      "updatedAt": 1726149332189
+      "updatedAt": 1767104269219
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JIED5KRG",
+      "tagsIds": [
+        "3nM3d2Kw"
+      ],
+      "description": null,
+      "name": "Compose Function",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "typescript",
+          "value": "const compose = (...args) => \n  args.reduceRight((acc, fn) => fn(typeof acc ==='function' ? acc() : acc))\n\n\n// Example Usage\nconst mult = (x,y) => x*y\n\nconst double = (x) => mult(x, 2)\nconst triple = (x) => mult(x, 3)\n\nconst out3 = compose(double, triple, 6) // 36\nconst out4 = compose(double, triple, () => 6) // 36\n\nconsole.log(out3)\nconsole.log(out4)"
+        }
+      ],
+      "id": "91SISQYE",
+      "createdAt": 1767104287302,
+      "updatedAt": 1767104419098
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "JIED5KRG",
+      "tagsIds": [
+        "3nM3d2Kw"
+      ],
+      "description": null,
+      "name": "Pipe / Pipe Line Function",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "typescript",
+          "value": "const pipe = (...args) => \n  args.reduce((acc, fn) => fn(typeof acc ==='function' ? acc() : acc))\n\n// Example Usage\n\nconst mult = (x,y) => x*y\n\nconst double = (x) => mult(x, 2)\nconst triple = (x) => mult(x, 3)\n\nconst out1 = pipe(1, double, triple)\nconst out2 = pipe(() => 1, double, triple)\n\nconsole.log(out1)\nconsole.log(out2)"
+        }
+      ],
+      "id": "DqQM3pX6",
+      "createdAt": 1767104421932,
+      "updatedAt": 1767104469467
     }
   ],
   "tags": [
@@ -455,6 +486,18 @@
       "id": "Za3bsUXr",
       "createdAt": 1701190215603,
       "updatedAt": 1701190215603
+    },
+    {
+      "name": "generator",
+      "id": "fVJLJCAh",
+      "createdAt": 1767104269184,
+      "updatedAt": 1767104269184
+    },
+    {
+      "name": "Functional Programming",
+      "id": "3nM3d2Kw",
+      "createdAt": 1767104310878,
+      "updatedAt": 1767104310878
     }
   ]
 }
